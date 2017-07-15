@@ -86,7 +86,7 @@ class App extends Component {
 
         <div className="container-fluid">
           <div className="row">
-          <div className="col-xs-10">
+          <div className="col-xs-12">
           <div className="jumbotron">
             <h1>Shopping</h1>
             <p>This is shopping, my way...</p>
@@ -115,7 +115,7 @@ class App extends Component {
              })}
               </ul>
             </div>
-            <div className="col-xs-6">
+            <div className="col-xs-8">
 
               <input  className="form-control" type="text" onKeyUp={this.onChangeHandler.bind(this)}/>
 
