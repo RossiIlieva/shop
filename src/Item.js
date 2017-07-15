@@ -17,10 +17,10 @@ class Item extends Component {
   render() {
 
     return (
-        <div className="container">
+        <div className="container-fluid">
 
 
-        
+
         <div className="checkbox">
           <label>
            <input type="checkbox" id="check-one"/>
@@ -28,7 +28,7 @@ class Item extends Component {
            </label>
            <a href="#" onClick={this.onClickHandler.bind(this)}>
            <span> </span>
-            <span className="glyphicon glyphicon-remove-circle"/>
+            <span className="glyphicon glyphicon-remove-circle"/>remove
            </a>
         </div>
         </div>
