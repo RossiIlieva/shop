@@ -16,7 +16,9 @@ class App extends Component {
     this.setState((oldState, props) => {
        const newList = [...oldState.list[identifier]]; // ...тук ...
        newList.splice(index,1);
-       return {list: {...oldState.list, identifier:newList}}; // ... и тук ...
+       const list = {...oldState.list, [identifier]:newList};
+       return {list}; // ... и тук ...
+
     });
   }
 
@@ -52,7 +54,8 @@ class App extends Component {
        if (event.keyCode !== 13) return;
 
        const newItem = event.target.value; // See MDN for JS event definitions
-       event.target.setSelectionRange(0,newItem.length+1);
+      /* event.target.setSelectionRange(0,newItem.length+1);*/
+      event.target.value = " "
        this.setState((oldState, props) => {
         const ingredients = oldState.list ? oldState.list[App.BULK_INGREDIENTS_RECIPE.id]: [];
          // the new state
@@ -133,7 +136,7 @@ class App extends Component {
                   }
 
                   return components;
-                 
+
                 })}
             </div>
             </div>
