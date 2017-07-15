@@ -84,14 +84,17 @@ class App extends Component {
 
     return (
 
-        <div className="container">
-
+        <div className="container-fluid">
+          <div className="row">
+          <div className="col-xs-10">
           <div className="jumbotron">
             <h1>Shopping</h1>
             <p>This is shopping, my way...</p>
           </div>
+          </div>
+          </div>
 
-        <div className="container">
+        <div className="container-fluid">
             <div className="row">
             <div className="col-xs-4">
               <ul className="media-list">
@@ -102,7 +105,7 @@ class App extends Component {
                   <li key={r.id} className="media">
 
                       <a href="#"  onClick={this.onSelectRecipe.bind(this)}>
-                      <img id={r.id} style={style} className="media-object" src={r.smallImageUrls} alt="A recipe"/>
+                      <img id={r.id} style={style} className="media-object" src={r.smallImageUrls} alt="My recipe"/>
                       </a>
 
                      <h5 className="media-heading">{r.recipeName}</h5>
@@ -112,7 +115,7 @@ class App extends Component {
              })}
               </ul>
             </div>
-            <div className="col-xs-8">
+            <div className="col-xs-6">
 
               <input  className="form-control" type="text" onKeyUp={this.onChangeHandler.bind(this)}/>
 
@@ -126,8 +129,8 @@ class App extends Component {
                   if (ingredients) {
                     components.push(
                         (arecipe.id === 'bulk')
-                            ? <h5>[{arecipe.recipeName}]</h5>
-                            : <h5><a target="new" href={`http://www.yummly.co/#recipe/${arecipe.id}`}>[{arecipe.recipeName}]</a></h5>);
+                            ? <h3>{arecipe.recipeName}</h3>
+                            : <h3><a target="new" href={`http://www.yummly.co/#recipe/${arecipe.id}`}>{arecipe.recipeName}</a></h3>);
 
                     ingredients.forEach((x, i) => components.push(
                         <Item index={i} onClick={() => this.onIngredientDeleteHandler(identifier, i)}>
@@ -144,7 +147,9 @@ class App extends Component {
 
 
 
-              <div className="row">
+
+
+              <div className="container-fluid">
                 <p className="small">{recipes.attribution && recipes.attribution.text} <a href='http://www.yummly.co/recipes'><img alt='Yummly' src='https://static.yummly.co/api-logo.png'/></a></p>
               </div>
 
